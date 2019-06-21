@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<%= render 'layouts/navbar'%>
+
+<h1>Decks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Set name</th>
+      <th>Release date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @decks.each do |deck| %>
+      <tr>
+        <td><%= deck.set_name %></td>
+        <td><%= deck.release_date %></td>
+        <td><%= link_to 'Show', deck %></td>
+        <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
+        <td><%= link_to 'Destroy', deck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deck', new_deck_path %>

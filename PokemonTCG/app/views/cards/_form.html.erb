@@ -1,0 +1,60 @@
+<style>
+.container{
+  background-color: #cfcfd1;
+  text-align: center;
+}
+</style>
+
+<div class="container">
+<%= form_with(model: card, local: true) do |form| %>
+  <% if card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+      <% card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field" type="number" min="0">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :move %>
+    <%= form.text_field :move %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poke_type %>
+    <%= form.text_field :poke_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field" type="number" min="0">
+    <%= form.label :deck_id %>
+    <%= form.number_field :deck_id %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
+
+</div>

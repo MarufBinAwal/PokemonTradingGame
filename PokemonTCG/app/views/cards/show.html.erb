@@ -1,0 +1,34 @@
+<%= render 'layouts/navbar'%>
+
+<style>
+.container{
+    background-color: #cfcfd1;
+}
+</style>
+
+<div class="center container">
+<%=image_tag "#{@card.url}" %>
+<br>
+<div class="center text-align border: 2px solid black">
+<h3 class="center">
+<strong>Species:</strong>
+<%= @card.poke_type %>
+</h3>
+<br>
+<h3 class="center">
+<strong>User:</strong>
+<%= @card.user_id %>
+</h3>
+<br>
+<h3 class="center">
+<strong>Deck:</strong>
+<%= @card.deck_id %>
+</h3>
+
+
+<div class="center">
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>
+</div>
+</div>
+</div>

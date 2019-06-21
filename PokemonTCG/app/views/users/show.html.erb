@@ -1,0 +1,41 @@
+<style>
+.container{
+  background-color: #cfcfd1;
+}
+</style>
+
+<%= render 'layouts/navbar'%>
+
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<div class="center">
+<h2 >
+  <strong>Gotta Catch 'Em All </strong>
+  <%= @user.name %>
+  <strong>! </strong>
+</h2>
+
+<p>
+  <strong>Trainer Email:</strong>
+  <%= @user.email %>
+</p>
+
+
+<p>
+  <strong>Trainer Name:</strong>
+  <%= @user.name %>
+</p>
+
+<h2>
+  <strong>Your Pokemon </strong>
+  <br>
+  <% @user.cards.each do |card| %>
+    <%=image_tag "#{card.url_tiny}"%>
+  <% end %>
+</h2>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+</div>
+</div>

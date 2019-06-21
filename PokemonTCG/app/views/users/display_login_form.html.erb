@@ -1,0 +1,55 @@
+<%= form_with method: 'POST', url: '/users/authenticate' do | form | %>
+
+<header>
+<style>
+.center {
+  margin: auto;
+  width: 40%;
+  padding: 20px;
+}
+.divider{
+    display:inline-block;
+}
+</style>
+</header>
+
+<div class="container center">
+
+<h1>Login</h1>
+<body>
+  <div class="row">
+    <div class="Absolute-Center is-Responsive">
+      <div id="logo-container"></div>
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div>
+          <div class="form-group input-group ">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user">
+            <%= form.label :email %>
+            <%= form.text_field :email %> 
+            </i></span>        
+          <div class="divider">
+          <div class="form-group input-group ">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock">
+             <%= form.label :password %>
+            <%= form.password_field :password%>
+            </i></span>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> I agree to Catch 'Em All</input>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <%= form.submit :Login %>
+          </div>
+          <div class="form-group">
+            <%= form.submit :NewUser %>
+
+          </div>
+          <% end %>
+      </div>  
+    </div>    
+  </div>
+  </body>
+</div>

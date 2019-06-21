@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+<%= render 'layouts/navbar'%>
+
+<style>
+.container{
+  text-align: center;
+  background-color: #cfcfd1;
+}
+</style>
+
+<div class="container">
+<h1 class="center ">All Cards</h1>
+
+<table class="center">
+  <thead>
+    <tr>
+      <th>Name</th>
+       <th></th>
+      <th>Move</th>
+      <th></th>
+      <th>Species</th>
+      <th></th>
+      <th>Pokédex Number</th>
+      <th></th>
+      <th>User</th>
+      <th></th>
+      <th>Deck</th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.name %></td>
+         <td><%=  %></td>
+        <td><%= card.move %></td>
+        <td><%=  %></td>
+        <td><%= card.poke_type %></td>
+        <td><%=  %></td>
+        <td><%= card.number %></td>
+        <td><%=  %></td>
+        <td><%= card.user_id %></td>
+        <td><%=  %></td>
+        <td><%= card.deck_id %></td>
+        <td><%=  %></td>
+        <td><%= link_to 'Show', card %></td>
+        <td><%= link_to 'Edit', edit_card_path(card) %></td>
+        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Custom Card', new_card_path %>
+</div>

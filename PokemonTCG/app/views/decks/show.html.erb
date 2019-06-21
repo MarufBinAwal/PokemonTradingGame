@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<%= render 'layouts/navbar'%>
+
+<p>
+  <strong>Set name:</strong>
+  <%= @deck.set_name %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @deck.release_date %>
+</p>
+
+<%= link_to 'Edit', edit_deck_path(@deck) %> |
+<%= link_to 'Back', decks_path %>
